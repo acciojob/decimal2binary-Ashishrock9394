@@ -1,13 +1,10 @@
 function decimalToBinary(num) {
 
-	let binary= num;
+	let binary=0;
 	while (num > 0) {
-	   if (num & 1) {
-	      binary = "1" + binary;
-	   } else {
-	      binary = "0" + binary;
-	   }
-	   num = num >> 1;
+		let rem = num%2;
+		binary = binary*10 + rem;
+		num = num/2;
 	}
 
 	return binary;
